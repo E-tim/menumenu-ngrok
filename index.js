@@ -2,7 +2,7 @@ const express = require('express')
 const axios = require('axios')
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 2000;
 
 
 app.use(express.json());
@@ -11,7 +11,7 @@ app.get('/', (req, res)=> {
 })
 app.post('/print', async (req, res) => {
   try {
-    const ngrokUrl = 'https://abcd1234.ngrok.io';  // Replace with your Ngrok URL
+    const ngrokUrl = 'https://fbdb-197-210-53-46.ngrok-free.app';  // Replace with your Ngrok URL
     const response = await axios.post(`${ngrokUrl}/print`, req.body);
 
     res.status(200).send(response.data);
